@@ -191,7 +191,7 @@ try {
     
     
     # Start the installer process without waiting so installer logs can be uploaded to Blob
-    $global:InstallerProcess = Start-Process -FilePath $dqcWebLocalPath -ArgumentList "/VERYSILENT", "/NORESTART", "/ForceSSIS2017x64", "/LOG=$installerLogPath", "-License $productLicense" -PassThru
+    $global:InstallerProcess = Start-Process -FilePath $dqcWebLocalPath -ArgumentList "/VERYSILENT", "/NORESTART", "/ForceSSIS2017x64", "/LOG=$installerLogPath", "-License $productLicense", "/NoPopUp" -PassThru
 
     # Wait until the installer log file is created
     while (-not (Test-Path $installerLogPath)) {
